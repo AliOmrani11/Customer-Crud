@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+
+
+
+  customerdb:
+    container_name: customer.db
+    environment:
+      SA_PASSWORD : "admin"
+      ACCEPT_EULA : "Y"
+    restart: always
+    volumes:
+      - sql-volume:/var/opt/mssql
+    ports:
+      - "1433:1433" 
+
+
+  customer.api:
+    container_name: customer.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "2020:80"
+    restart: always
+    depends_on:
+      - customerdb
