@@ -12,11 +12,11 @@ namespace Infrastructure.Configs.Startup;
 public static class InfrastructureRegistration
 {
 
-    public static IServiceCollection RegisterInfrastructure(this IServiceCollection services)
+    public static IServiceCollection RegisterInfrastructure(this IServiceCollection services , IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(option =>
         {
-            option.UseSqlServer("Server=.;Database=CustomerDb;User Id=sa;Password=@liSqlServer;Encrypt=false;");
+            option.UseSqlServer(configuration.GetConnectionString("SqlConnection"));
         });
 
         services.AddScoped<ICustomerRepository, CustomerRepository>()

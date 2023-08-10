@@ -118,9 +118,9 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "Ali",
                             "Omrani",
-                            "1994-02-01",
+                            "1997-01-01",
                             "+989389121376",
-                            "aliomrani5@gmail.com",
+                            "aliomrani@gmail.com",
                             "1234567890"});
 #line 5
     testRunner.Given("the following customer details:", ((string)(null)), table1, "Given ");
@@ -171,11 +171,11 @@ this.ScenarioInitialize(scenarioInfo);
                             "Email",
                             "BankAccountNumber"});
                 table2.AddRow(new string[] {
-                            "Ali",
-                            "Omrani",
+                            "Ali2",
+                            "Omrani2",
                             "1990-01-01",
                             "+989389121376",
-                            "aliomrani4@gmail.com",
+                            "aliomrani@gmail.com",
                             "1234567890"});
 #line 13
     testRunner.Given("the following customer details:", ((string)(null)), table2, "Given ");
@@ -228,7 +228,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table3.AddRow(new string[] {
                             "Ali",
                             "Omrani",
-                            "1990-01-01",
+                            "1997-01-01",
                             "+989389121376",
                             "aliomrani7@gmail.com",
                             "1234567890"});

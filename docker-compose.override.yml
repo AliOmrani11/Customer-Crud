@@ -20,6 +20,7 @@ services:
     container_name: customer.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:SqlConnection=Server=.;Database=CustomerDb;User Id=sa;Password=@liSqlServer;Encrypt=false;" 
     ports:
       - "2020:80"
     restart: always

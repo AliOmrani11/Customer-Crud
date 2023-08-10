@@ -15,8 +15,13 @@ public class PhoneNumberValidator : IPhoneNumberValidator
         var util = PhoneNumberUtil.GetInstance();
         try
         {
-            var number = util.Parse(phoneNumber, "US");
-            return util.IsValidNumber(number);
+            var number = util.Parse(phoneNumber, null);
+            var isNumber = util.GetNumberType(number);
+            if (isNumber==PhoneNumberType.MOBILE || isNumber == PhoneNumberType.FIXED_LINE_OR_MOBILE)
+            {
+                return util.IsValidNumber(number);
+            }
+            return false;
         }
         catch (NumberParseException)
         {
